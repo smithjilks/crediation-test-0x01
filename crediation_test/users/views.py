@@ -21,7 +21,7 @@ class UsersList(APIView):
                                         if request.GET.get('email', '') == v["fields"]["email"]:
                                                 return Response(v["fields"])   
                 
-                                return Response([{"Message": "Could not find user"}],status=status.HTTP_400_BAD_REQUEST)
+                                return Response([{"Error": "Could not find user"}],status=status.HTTP_400_BAD_REQUEST)
 
                 with open(file_path, 'r', encoding='utf-8') as f:
                         user_data = json.load(f)
@@ -35,11 +35,14 @@ class UsersList(APIView):
 
         def post(self, request):
                 pay_load = json.loads(request.body)
-                first_name = pay_load['firstname']
-                last_name = pay_load['lastname']
-                email = pay_load['email']
-                if first_name is None or last_name is None or email is None:
-                        return Response({"Message": "Could not find user"},status=status.HTTP_400_BAD_REQUEST)
+                try:
+                        first_name = pay_load['firstname']
+                        last_name = pay_load['lastname']
+                        email = pay_load['email']
+                        if first_name == "" or last_name == "" or email == "":
+                                return Response({"Error": "Missing fields"},status=status.HTTP_400_BAD_REQUEST)
+                except Exception:
+                        return Response({"Error": "Missing fields"},status=status.HTTP_400_BAD_REQUEST)
                 
                 id = str(uuid4())
                 new_user = User(firstname=first_name, lastname=last_name, email=email, id=id)
