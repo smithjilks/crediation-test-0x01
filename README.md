@@ -95,6 +95,14 @@ On localhost:
         <img src="https://github.com/smithjilks/crediation-test-0x01/blob/feature-users-api/images/test.png" width="400"/>
 
 ## UNIT Tests
+The screenshot below shows the tests that are done on the repo:
+
+### Unit Tests in user model
+The unit tests done here are:
+- Testing for unique uuid created using python UUID 
+- Testing instance of class is of type User Model
+<img src="https://github.com/smithjilks/crediation-test-0x01/blob/feature-users-api/images/unit-test.png" width="400"/>
+
 
 ## LICENSE
         MIT License
