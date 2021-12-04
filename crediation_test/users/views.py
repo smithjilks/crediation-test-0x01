@@ -54,6 +54,10 @@ class UsersList(APIView):
                         """read json file"""
                         dict_map = json.load(f)
                         dict = dict_map.items()
+                        for k,v in dict:
+                                if user_json[0]["fields"]["email"] == v["fields"]["email"]:
+                                        return Response({"Error": "User already Exists"},status=status.HTTP_400_BAD_REQUEST)
+
                         dict = {k: v for k, v in dict}
 
                         """new user"""
