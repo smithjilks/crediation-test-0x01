@@ -103,6 +103,9 @@ The unit tests done here are:
 - Testing instance of class is of type User Model
 <img src="https://github.com/smithjilks/crediation-test-0x01/blob/feature-users-api/images/unit-test.png" width="400"/>
 
+To execute Unit Test run the python script in the crediation directory as shown below:
+```python3 manage.py test```
+
 
 ## LICENSE
         MIT License
