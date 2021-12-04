@@ -92,7 +92,7 @@ On localhost:
                                 "Message": "Could not find user"
                         }
 
-        <img src="https://github.com/smithjilks/crediation-test-0x01/blob/feature-users-api/images/test.png" width="400"/>
+<img src="https://github.com/smithjilks/crediation-test-0x01/blob/feature-users-api/images/test.png" width="400"/>
 
 ## UNIT Tests
 The screenshot below shows the tests that are done on the repo:
